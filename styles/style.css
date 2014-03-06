@@ -418,8 +418,8 @@ a.down_btn {
 }
 .artists_item .element {overflow:visible !important;}
 .artists_item .hover_img img {
-	opacity: 0.84;
-	filter: alpha(opacity=84);
+	opacity: 1;
+	filter: alpha(opacity=100);
 }
 .artists_item .zoom {
 	display:inline-block;
