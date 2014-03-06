@@ -759,7 +759,7 @@ a.btn_load_more:hover {
 #testimonials .parallax_effect {
 	position:relative;
 	padding:84px 0 65px;
-	background-image: url(../images/testimonials_bg.jpg);
+  background: #333;
 }
 #testimonials .parallax_effect .container {
 	position:relative;
