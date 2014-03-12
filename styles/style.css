@@ -245,7 +245,7 @@ a.menu_toggler { display:none;
 #home {
 	position:relative;
 	padding:0;
-	background-image: url(../images/onlookers.jpg);
+	background-image: url(../src/graphics/bigCover.jpg);
 	box-shadow:0 0 250px rgba(0,0,0,0.24) inset;
 }
 .home_gradient {
