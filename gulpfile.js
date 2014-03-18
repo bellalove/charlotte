@@ -4,6 +4,7 @@ var targetd = './',
     scriptsd = targetd + 'scripts/',
     imagesd = targetd + 'images/',
     gulp = require("gulp"),
+    glob = require("glob"),
     p = require("gulp-load-plugins")();
 
 var paths = {
@@ -18,69 +19,97 @@ var paths = {
   ]
 };
 
-gulp.task('scripts-min', function(){
-  gulp.src('src/scripts/**/*.js')
+gulp.task('clean',function(){
+  return gulp.src(paths.clean, {read: false})
+    .pipe(p.clean());
+});
+
+//------------------------------- scripts ---------------------------------
+
+gulp.task('scripts-pkgs', function(){
+  var pkgDirs = glob.sync('src/scripts/pkgs/*/');
+  pkgDirs.forEach(function(d){
+    var pkgName = d.match('/.+\/(.+)\/$')[1];
+    gulp.src(d + '*.js')
+      .pipe(p.jshint())
+      .pipe(p.uglify())
+      .pipe(p.concat(pkgName + '.pkg.min.js'))
+      .pipe(gulp.dest(scriptsd))
+  });
+});
+
+gulp.task('scripts-asis', function(){
+  return gulp.src('src/scripts/*.min.js')
+    .pipe(gulp.dest(scriptsd));
+});
+
+gulp.task('scripts-plain', function(){
+  return gulp.src(['src/scripts/*.js', '!src/scripts/*.min.js'])
     .pipe(p.jshint())
-    .pipe(gulp.dest(scriptsd))
     .pipe(p.uglify())
-    .pipe(p.rename({extname: ".min.js"}))
     .pipe(gulp.dest(scriptsd));
 });
 
-gulp.task('scripts-before',['scripts-min'],function(){
-  gulp.src(scriptsd + 'before/*.min.js')
-    .pipe(p.concat('before.min.js'))
-    .pipe(gulp.dest(scriptsd));
-});
+gulp.task('scripts',['scripts-plain','scripts-asis','scripts-pkgs']);
 
-gulp.task('scripts-after',['scripts-min'],function(){
-  gulp.src(scriptsd + 'after/*.min.js')
-    .pipe(p.concat('after.min.js'))
-    .pipe(gulp.dest(scriptsd));
-});
+//------------------------------- styles ---------------------------------
 
-gulp.task('scripts',['scripts-min','scripts-before','scripts-after']);
-
-gulp.task('styles', function(){
-  gulp.src('src/styles/**/*.styl')
+gulp.task('stylus', function(){
+  return gulp.src('src/styles/**/*.styl')
     .pipe(p.stylus({paths: paths.stylus, use: ['nib']}))
     .pipe(p.autoprefixer('last 2 versions'))
     .pipe(gulp.dest(stylesd))
     .pipe(p.minifyCss({keepSpecialComments: 0}))
     .pipe(p.rename({extname: ".min.css"}))
     .pipe(gulp.dest(stylesd));
-  gulp.src('src/styles/**/*.!(styl)')
+});
+
+gulp.task('styles-asis', function(){
+  return gulp.src('src/styles/**/*.!(styl)')
     .pipe(gulp.dest(stylesd));
 });
 
+gulp.task('styles',['stylus','styles-asis']);
+
+//------------------------------- images ---------------------------------
+
 gulp.task('favicon',function(){
-  gulp.src('src/images/favicon.ico')
+  return gulp.src('src/images/favicon.ico')
     .pipe(gulp.dest(targetd));
 });
 
-gulp.task('images',['favicon'],function(){
-  gulp.src('src/images/**/*.{jpg,jpeg,png,gif}')
+gulp.task('raster',function(){
+  return gulp.src('src/images/**/*.{jpg,jpeg,png,gif}')
     .pipe(p.imagemin())
     .pipe(gulp.dest(imagesd));
-  gulp.src('src/images/**/*.{svg}')
+});
+
+gulp.task('svg',function(){
+  return gulp.src('src/images/**/*.{svg}')
     .pipe(p.svgmin())
     .pipe(gulp.dest(imagesd));
 });
 
-gulp.task('clean',function(){
-  gulp.src(paths.clean, {read: false})
-    .pipe(p.clean());
-});
+gulp.task('images', ['favicon', 'raster', 'svg']);
 
-gulp.task('html', function(){
-  gulp.src('src/html/*.html')           
+//------------------------------- html -----------------------------------
+
+gulp.task('html-plain', function(){
+  return gulp.src('src/html/*.html')           
     .pipe(p.minifyHtml())
     .pipe(gulp.dest(htmld));
-  gulp.src('src/html/*.jade')           
+});
+
+gulp.task('jade', function(){
+  return gulp.src('src/html/*.jade')           
     .pipe(p.jade())
     .pipe(p.minifyHtml())
     .pipe(gulp.dest(htmld));
 });
+
+gulp.task('html', ['html-plain', 'jade']);
+
+//------------------------------- default --------------------------------
 
 gulp.task('default',['scripts','styles','images','html'],function(){
   //TODO: reactivate when watch and concat combo is fixed
