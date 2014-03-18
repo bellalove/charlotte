@@ -10,13 +10,7 @@ html
     link(href='styles/main.css', rel='stylesheet', type='text/css')
     link(href='styles/fonts/fonts.css', rel='stylesheet', type='text/css')
     link(rel='shortcut icon', href='favicon.ico')
-    // // IE  //
-    //if IE
-      script(src='http://html5shiv.googlecode.com/svn/trunk/html5.js')
-    //if IE 8 
-      html.ie.ie8(lang='en')  
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js', type='text/javascript')
-    script(src='scripts/jquery.isotope.min.js', type='text/javascript')
     script(src='scripts/sorting.js', type='text/javascript')
     script(src='scripts/sorting_events.js', type='text/javascript')
     script(src='scripts/jquery.stellar.min.js', type='text/javascript')
@@ -24,9 +18,7 @@ html
     script(src='scripts/jcarousellite_1.0.1.min.js', type='text/javascript')
     script(src='scripts/myscript.js', type='text/javascript')
   body
-    // #page
     #page
-      // header section
       section#top
         header
           .container
@@ -47,10 +39,6 @@ html
                   a(href='#contact') Contact
                 li.last
                   a(href='#shop') Shop
-            // end nav
-          // end .container
-      // //header section
-      // home content
       section#home.page_section.parallax_effect(data-stellar-background-ratio='0.5')
         .container
           .welcome_block
@@ -59,13 +47,9 @@ html
             p Bringing out the awesome in local art
           a.down_btn(href='#events')
         .home_gradient
-      // events content
       section#events.page_section
-        // section header
         .container
           h2 Events
-        // //section header
-        // section content
         .content_section.container
           .events_block
             .post_block
@@ -210,18 +194,13 @@ html
                 span may
             .center_line_events
           script(type='text/javascript')
-            //jQuery(window).load(function(){ items_set = [ {title : 'Mauris elementum', content: 'Aenean sagittis tortor quis nisl aliquet at rutrum nisi posuere. Ut sollicitudin congue orci sed aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum, elit ac fermentum', place : 'London', event_date : '10', event_month : 'july', src : 'images/events/1.jpg', url : 'javascript:void(0)', category: '' }, {date_indent_class : 'second_post_block', title : 'Mauris elementum', content: 'Aenean sagittis tortor quis nisl aliquet at rutrum nisi posuere. Ut sollicitudin congue orci sed aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum, elit ac fermentum', place : 'London', event_date : '10', event_month : 'july', src : 'images/events/2.jpg', url : 'javascript:void(0)', category: 'right_post' }, {title : 'Mauris elementum', content: 'Aenean sagittis tortor quis nisl aliquet at rutrum nisi posuere. Ut sollicitudin congue orci sed aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum, elit ac fermentum', place : 'London', event_date : '09', event_month : 'july', src : 'images/events/3.jpg', url : 'javascript:void(0)', category: 'right_post' }, {title : 'Mauris elementum', content: 'Aenean sagittis tortor quis nisl aliquet at rutrum nisi posuere. Ut sollicitudin congue orci sed aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum, elit ac fermentum', place : 'London', event_date : '08', event_month : 'july', src : 'images/events/4.jpg', url : 'javascript:void(0)', category: '' }, {title : 'Mauris elementum', content: 'Aenean sagittis tortor quis nisl aliquet at rutrum nisi posuere. Ut sollicitudin congue orci sed aliquam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi rutrum, elit ac fermentum', place : 'London', event_date : '07', event_month : 'july', src : 'images/events/5.jpg', url : 'javascript:void(0)', category: '' } ]; jQuery('#list').events_addon({ type : 1, items : items_set }); });
       section#awesome.page_section
         .container
           .span6(style='height: 90px; line-height: 90px; text-align: center; vertical-align: middle; background-image: url("images/onlookers.jpg"); background-color: #eeeeee; width: 100%;')
             h1 You&apos;re Awesome&excl;
-      // artists content
       section#artists.page_section
-        // section header
         .container
           h2 Artists
-        // //section header
-        // section content
         .content_section
           .container
             #options
@@ -239,7 +218,6 @@ html
                 li
                   a(href='#filter', data-option-value='.sculpture') Sculpture
               .clear
-            // .filter_block
             .row.projects.artists_block
               .element.span4.wedding
                 .artists_item
@@ -329,7 +307,6 @@ html
           .row
             .span6(style='background-color: #eeeeee; width: 100%;')
               p Here&apos;s where we will put the current shop items
-      // media content
       section#media.page_section
         .container
           h2 Media
@@ -337,13 +314,9 @@ html
           .row
             .span6(style='background-color: #eeeeee; width: 100%;')
               p Here&apos;s where we will put the current media items
-      // about content
       section#about.page_section
-        // section header
         .container
           h2 About
-        // //section header
-        // section content
         .content_section.container
           .row
             .span6
@@ -408,9 +381,7 @@ html
                 | &OpenCurlyDoubleQuote;Uniting the community&comma; inspiring local support&comma; and
                 | allowing creativity to prosper&mldr; That&rsquor;s Bella Love&period;&rdquor;
             .clear
-        // //section content
       section#testimonials
-        // section header
         .parallax_effect(data-stellar-background-ratio='0.5')
           .container
             .jcarousel_block
@@ -441,20 +412,13 @@ html
                       span Tom Doe&comma;
                       | lorem ipsum
               .clear
-            // //Jcarousel Lite
-          // end .container
           .jcarousel_prev
           .jcarousel_next
           .home_gradient
-        // //section header
-      // Contact content
       section#contact.page_section
-        // section header
         .container
           h2
             span Contact
-        // //section header
-        // section content
         .content_section.container
           .row
             .span12
@@ -486,15 +450,9 @@ html
                     input.span9.contact_btn(type='submit', value='send message')
                     .clear
             .clear
-        // //section content
-      // footer
       .footer
-        // footer_bottom
         .footer_bottom.container
           .fleft.copyright Bellalove &copy; 2014
           a.fright.down_btn(href='#home') Back to top
           .clear
-        // //footer_bottom
-      // //footer
-    // end #page
     header.fixed-menu
