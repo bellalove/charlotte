@@ -5,19 +5,14 @@ html
     title Bellalove
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
+    meta(name='keywords', content='')
+    link(rel='shortcut icon', href='favicon.ico')
     meta(name='author', content='humans.txt')
     link(href='styles/prettyPhoto.css', rel='stylesheet', type='text/css')
     link(href='styles/main.css', rel='stylesheet', type='text/css')
     link(href='styles/fonts/fonts.css', rel='stylesheet', type='text/css')
-    link(rel='shortcut icon', href='favicon.ico')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js', type='text/javascript')
-    script(src='scripts/sorting.js', type='text/javascript')
-    script(src='scripts/sorting_events.js', type='text/javascript')
-    script(src='scripts/jquery.isotope.min.js', type='text/javascript')
-    script(src='scripts/jquery.stellar.min.js', type='text/javascript')
-    script(src='scripts/jquery.prettyPhoto.js', type='text/javascript')
-    script(src='scripts/jcarousellite_1.0.1.min.js', type='text/javascript')
-    script(src='scripts/myscript.js', type='text/javascript')
+    script(src='scripts/before.min.js', type='text/javascript')
   body
     #page
       section#top
@@ -301,7 +296,7 @@ html
                       p Mauris elementum
                       span Lorem ipsum dolor sit
                       a.zoom(href='images/projects/9.jpg', rel='prettyPhoto[artists1]') Open
-      section#shop.page_section
+      section#shop.page_section.off
         .container
           h2 Shop
         .content_section.container

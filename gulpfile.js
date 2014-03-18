@@ -18,20 +18,28 @@ var paths = {
   ]
 };
 
-gulp.task('scripts', function(){
+gulp.task('scripts-min', function(){
   gulp.src('src/scripts/**/*.js')
     .pipe(p.jshint())
     .pipe(gulp.dest(scriptsd))
     .pipe(p.uglify())
     .pipe(p.rename({extname: ".min.js"}))
     .pipe(gulp.dest(scriptsd));
+});
+
+gulp.task('scripts-before',['scripts-min'],function(){
   gulp.src(scriptsd + 'before/*.min.js')
     .pipe(p.concat('before.min.js'))
     .pipe(gulp.dest(scriptsd));
+});
+
+gulp.task('scripts-after',['scripts-min'],function(){
   gulp.src(scriptsd + 'after/*.min.js')
     .pipe(p.concat('after.min.js'))
     .pipe(gulp.dest(scriptsd));
 });
+
+gulp.task('scripts',['scripts-min','scripts-before','scripts-after']);
 
 gulp.task('styles', function(){
   gulp.src('src/styles/**/*.styl')
@@ -75,10 +83,11 @@ gulp.task('html', function(){
 });
 
 gulp.task('default',['scripts','styles','images','html'],function(){
-  gulp.watch('src/styles/**/*.styl', ['styles','html']);
-  gulp.watch('src/scripts/**/*.js', ['scripts','html']); 
-  gulp.watch('src/images/**', ['images']);
-  gulp.watch('src/html/**/*.{html,jade}', ['html']);
+  //TODO: reactivate when watch and concat combo is fixed
+  //gulp.watch('src/styles/**/*.styl', ['styles','html']);
+  //gulp.watch('src/scripts/**/*.js', ['scripts','html']); 
+  //gulp.watch('src/images/**', ['images']);
+  //gulp.watch('src/html/**/*.{html,jade}', ['html']);
 });
 
 gulp.task('once',['scripts','styles','images','html']);
