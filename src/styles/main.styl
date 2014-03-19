@@ -1,3 +1,10 @@
+@import normalize
+
+whiteish = #e6e6e6
+greyish = #808080
+bpink = #ed1e79
+dgreyish = #4d4d4d
+
 opacity(n)
   zoom 1
   opacity n
@@ -6,22 +13,9 @@ opacity(n)
 .off
   display none
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
-font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
-b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td
-  outline none !important
-
 img
   vertical-align top
-  border 0
-  opacity(1)
   max-width 100%
-
-ul
-  padding 0
-  margin 0
 
 li
   padding 0
@@ -33,28 +27,21 @@ body
   margin 0
   padding 0
   font-family GeoSansLight, sans-serif
-  line-height 20px
-  font-size 16px
-  color #e6e6e6
-  background #808080
-
-html
-  font-size 100%
+  line-height 1.25em
+  color whiteish
+  background greyish
 
 ::selection
-  background #ed1e79
-  color #FFF
+  background bpink
+  color white
 
 a
-  color #ed1e79
+  color bpink
   text-decoration none !important
-  transition all 0.3s ease-in-out
-
-a:hover
-  color #555555
+  transition all 0.2s ease-in-out
 
 p
-  margin 0 0 20px
+  margin 0 0 1.25em
   padding 0
 
 .fleft
@@ -69,25 +56,25 @@ p
   font-size 0
 
 h1
-  margin 0 0 18px
+  margin 0 0 0.12em
   padding 0
   text-transform uppercase
   font-family Dalle, san-serif
   font-weight 700
-  line-height 65px
-  font-size 50px
-  color #4d4d4d
-  text-shadow 1px 2px 0 rgba(0,0,0,0.19)
+  line-height 1em
+  font-size 8em
+  color whiteish
+  text-shadow 0.01em 0.02em 0 rgba(0,0,0,0.19)
 
 h2
-  margin 0 0 9px
+  margin 0 0 0.12em
   padding 0
   text-transform uppercase
   font-family Dalle, san-serif
   font-weight 400
-  line-height 62px
-  font-size 50px
-  color #4d4d4d
+  line-height 1em
+  font-size 6em
+  color dgreyish
 
 h3
   margin 0 0 20px
@@ -148,10 +135,10 @@ h3
   width 65px
 
 .color
-  color #ed1e79
+  color bpink
 
 .bg_color
-  background-color #ed1e79
+  background-color bpink
 
 .page_section
   padding 33px 0 25px
@@ -175,7 +162,7 @@ h3
   font-weight 400
   line-height 74px
   font-size 41px
-  color #fff
+  color white
   text-align center
   text-indent -25px
 
@@ -219,7 +206,7 @@ h3
 
 .fixed-menu .navmenu ul li a:hover,
 .fixed-menu .navmenu ul li.active a
-  color #ed1e79
+  color bpink
 
 a.menu_toggler
   display none
@@ -393,14 +380,14 @@ a.down_btn
 
 #filter li a.selected,
 #filter li a:hover
-  color #ed1e79
+  color bpink
 
 .artists_block
   padding-top 15px
 
 .artists_item
   position relative
-  background #ed1e79
+  background bpink
 
 .artists_item .element
   overflow visible !important
@@ -422,7 +409,7 @@ a.down_btn
 
 .artists_item .zoom:hover
   background #fff
-  color #ed1e79
+  color bpink
 
 .load_more_cont
   width 100%
@@ -460,7 +447,7 @@ a.btn_load_more:hover
   transform translateX(25%)
 
 .artists_item .description
-  background none repeat scroll 0 0 #ed1e79
+  background none repeat scroll 0 0 bpink
   left 0
   padding 0
   position absolute
@@ -571,15 +558,15 @@ a.btn_load_more:hover
   right -26px
 
 .post_block:hover .post_date:before
-  background #ed1e79
+  background bpink
 
 .post_block:hover .post_date
-  color #ed1e79
-  border 3px solid #ed1e79
+  color bpink
+  border 3px solid bpink
 
 .event_img
   position relative
-  background #ed1e79
+  background bpink
 
 .post_block .zoom
   position absolute
@@ -626,9 +613,9 @@ a.btn_load_more:hover
   transition all 0.5s ease-in-out
 
 .post_block:hover .event_description
-  border-right 3px solid #ed1e79
-  border-bottom 3px solid #ed1e79
-  border-left 3px solid #ed1e79
+  border-right 3px solid bpink
+  border-bottom 3px solid bpink
+  border-left 3px solid bpink
 
 .event_description a.title
   text-transform uppercase
@@ -637,18 +624,14 @@ a.btn_load_more:hover
   color #505050
 
 .post_block:hover .event_description a.title
-  color #ed1e79
+  color bpink
 
 .event_info
   margin-bottom 9px
   font-size 12px
-  color #e6e6e6
-
-.event_description a.read_more
-  color #505050
 
 .post_block .event_description a.read_more:hover
-  color #ed1e79
+  color bpink
 
 .jCarouselLite
   width 100% !important
@@ -679,11 +662,11 @@ a.btn_load_more:hover
 
 .jcarousel_prev:hover
   background-position 0 -57px
-  border 3px solid #ed1e79
+  border 3px solid bpink
 
 .jcarousel_next:hover
   background-position -57px -57px
-  border 3px solid #ed1e79
+  border 3px solid bpink
 
 #testimonials .parallax_effect
   position relative
@@ -727,7 +710,7 @@ a.btn_load_more:hover
   word-wrap break-word
 
 .contact_info a:hover
-  color #ed1e79
+  color bpink
 
 .contact_form [class*="span"]
   margin-bottom 0
@@ -777,7 +760,7 @@ input[type="color"]:focus
   display block
   cursor pointer
   padding 13px 0
-  border 5px solid #ed1e79
+  border 5px solid bpink
   border-radius 0
   box-shadow 0
   text-align center
@@ -788,12 +771,12 @@ input[type="color"]:focus
   font-weight 700
   line-height 20px
   font-size 18px
-  color #ed1e79
+  color bpink
   background #e6e6e6
   transition all 0.3s ease-in-out
 
 .contact_btn:hover
-  background #ed1e79
+  background bpink
   color #fff
 
 .notification_error
@@ -805,7 +788,7 @@ input[type="color"]:focus
   background #efefef
 
 .footer a
-  color #ed1e79
+  color bpink
 
 .footer a:hover
   color #979797
@@ -819,7 +802,7 @@ input[type="color"]:focus
   height 20px
   text-transform uppercase
   font-size 14px
-  color #ed1e79
+  color bpink
 
 @media (max-width: 1023px)
   .parallax_effect
@@ -979,7 +962,7 @@ input[type="color"]:focus
     color #505050
 
   .mobile_menu_wrapper a:hover
-    color #ed1e79
+    color bpink
 
   .mobile_menu_wrapper a span
     display none
