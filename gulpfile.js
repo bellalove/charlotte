@@ -109,14 +109,16 @@ gulp.task('jade', function(){
 
 gulp.task('html', ['html-plain', 'jade']);
 
-//------------------------------- default --------------------------------
+//------------------------------- watch ----------------------------------
 
-gulp.task('default',['scripts','styles','images','html'],function(){
-  //TODO: reactivate when watch and concat combo is fixed
-  //gulp.watch('src/styles/**/*.styl', ['styles','html']);
-  //gulp.watch('src/scripts/**/*.js', ['scripts','html']); 
-  //gulp.watch('src/images/**', ['images']);
-  //gulp.watch('src/html/**/*.{html,jade}', ['html']);
+gulp.task('watch', function(){
+  gulp.watch('src/styles/**', ['styles']);
+  gulp.watch('src/scripts/**', ['scripts']); 
+  gulp.watch('src/images/**', ['images']);
+  gulp.watch('src/html/**', ['html']);
 });
 
+//------------------------------- default --------------------------------
+
 gulp.task('once',['scripts','styles','images','html']);
+gulp.task('default',['once','watch']);
