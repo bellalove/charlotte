@@ -1,17 +1,10 @@
 @import normalize
+@import util
 
 whiteish = #e6e6e6
 greyish = #808080
 bpink = #ed1e79
 dgreyish = #4d4d4d
-
-opacity(n)
-  zoom 1
-  opacity n
-  filter unquote('alpha(opacity=' + round(n * 100) + ')')
-
-.off
-  display none
 
 img
   vertical-align top
@@ -30,6 +23,7 @@ body
   line-height 1.25em
   color whiteish
   background greyish
+  font-smoothing()
 
 ::selection
   background bpink
@@ -44,46 +38,27 @@ p
   margin 0 0 1.25em
   padding 0
 
-.fleft
-  float left
+h1, h2, h3
+  font-family Dalle, san-serif
+  font-weight normal
+  text-transform uppercase
+  padding 0
+  line-height 1em
+  margin 0 0 0.12em
 
-.fright
-  float right
-
-.clear
-  clear both
-  height 0
-  font-size 0
+h2, h3
+  color dgreyish
 
 h1
-  margin 0 0 0.12em
-  padding 0
-  text-transform uppercase
-  font-family Dalle, san-serif
-  font-weight 700
-  line-height 1em
-  font-size 8em
   color bpink
+  font-size 8em
   text-shadow 0.01em 0.02em 0 rgba(0,0,0,0.19)
 
 h2
-  margin 0 0 0.12em
-  padding 0
-  text-transform uppercase
-  font-family Dalle, san-serif
-  font-weight 400
-  line-height 1em
-  font-size 6em
-  color dgreyish
+  font-size 5em
 
 h3
-  margin 0 0 20px
-  padding 0
-  text-transform uppercase
-  font-weight 400
-  line-height 20px
-  font-size 16px
-  color #505050
+  font-size 4em
 
 .container
   width 1000px
@@ -303,9 +278,6 @@ a.down_btn
   width 63px
   height 63px
   background url(../images/down_btn.png) no-repeat
-
-#about h2
-  color #333
 
 #services
   width 100%
@@ -651,12 +623,12 @@ a.btn_load_more:hover
 
 .jCarouselLite
   width 100% !important
+  height 310px !important
 
 .jCarouselLite ul
   margin-left -20px !important
 
-.jcarousel_prev,
-.jcarousel_next
+.jcarousel_prev, .jcarousel_next
   position absolute
   z-index 10
   top 50%
@@ -686,31 +658,31 @@ a.btn_load_more:hover
 
 #testimonials .parallax_effect
   position relative
-  padding 84px 0 65px
-  background #333
+  padding 2em 0 1.5em
+  background dgreyish 
 
 #testimonials .parallax_effect .container
   position relative
   z-index 1
 
 .testimonials_block
-  padding 46px 0 0
+  padding 2em 0 0
   text-align center
-  color #fff
+  color whiteish
   background url(../images/testimonials_block.png) no-repeat center top
 
 .testimonials_txt
   padding 0 37px 22px
   font-style italic
+  color whiteish
 
 .testimonials_block a
   margin-right 15px
 
 .author_inf
   display inline-block
-  padding 14px 0 0
-  line-height 17px
-  text-align left
+  line-height 1em
+  text-align center
 
 .author_inf span
   display block

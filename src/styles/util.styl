@@ -1,0 +1,27 @@
+opacity(n)
+  zoom 1
+  opacity n
+  filter unquote('alpha(opacity=' + round(n * 100) + ')')
+
+font-smoothing()
+  font-smoothing antialiased !important
+  -webkit-font-smoothing: antialiased !important
+  -moz-osx-font-smoothing: grayscale !important
+
+.off
+  display none
+
+.fleft
+  float left
+
+.fright
+  float right
+
+.clear
+  clear both
+  height 0
+  font-size 0
+
+body
+  font-smoothing()
+
